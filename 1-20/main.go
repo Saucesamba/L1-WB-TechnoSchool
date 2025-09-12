@@ -9,10 +9,12 @@ func main() {
 	str := "snow dog sun"
 	arr := strings.Split(str, " ")
 	sb := strings.Builder{}
-	for i := 0; i < len(arr)-1; i++ {
-		arr[i], arr[len(arr)-1] = arr[len(arr)-1], arr[i]
+	n := len(arr)
+	for i := 0; i < n/2; i++ {
+		arr[i], arr[n-1-i] = arr[n-1-i], arr[i]
 	}
-	for i := 0; i < len(arr); i++ {
+
+	for i := 0; i < n; i++ {
 		sb.WriteString(arr[i])
 		sb.WriteString(" ")
 	}
