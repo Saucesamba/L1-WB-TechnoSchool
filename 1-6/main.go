@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-//завершение по условию
+// завершение по условию
 func workerIf() {
 	i := 0
 	for i < 100 {
@@ -19,7 +19,7 @@ func workerIf() {
 	}
 }
 
-//котекст с отменой
+// котекст с отменой
 func workerCtxCancel(ctx context.Context) {
 	i := 0
 	for {
@@ -34,7 +34,7 @@ func workerCtxCancel(ctx context.Context) {
 	}
 }
 
-//контекст с таймаутом
+// контекст с таймаутом
 func workerCtxTimeOut(ctx context.Context) {
 	i := 0
 	for {
@@ -49,7 +49,7 @@ func workerCtxTimeOut(ctx context.Context) {
 	}
 }
 
-//контекст с дедлайном
+// контекст с дедлайном
 func workerCtxDeadline(ctx context.Context) {
 	i := 0
 	for {
@@ -64,7 +64,7 @@ func workerCtxDeadline(ctx context.Context) {
 	}
 }
 
-//завершение по сигналу с канала
+// завершение по сигналу с канала
 func workerCh(ch <-chan int) {
 	select {
 	case v := <-ch:
@@ -76,7 +76,7 @@ func workerCh(ch <-chan int) {
 	}
 }
 
-//завершение по goex
+// завершение по goex
 func workerGoex() {
 	defer fmt.Println("Goex stopped")
 	time.Sleep(time.Second * 10)
